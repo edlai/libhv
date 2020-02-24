@@ -124,6 +124,7 @@ function=clock_gettime && header=time.h && check_funtion
 function=gettimeofday && header=sys/time.h && check_funtion
 function=pthread_spin_lock && header=pthread.h && check_funtion
 function=pthread_mutex_timedlock && header=pthread.h && check_funtion
+function=gettid && header=bits/unistd.h && check_funtion
 
 # end confile
 cat << END >> $confile

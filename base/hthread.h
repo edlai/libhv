@@ -9,10 +9,12 @@
 #elif defined(OS_ANDROID)
 #define gettid  gettid
 #elif defined(OS_LINUX)
+#ifndef HAVE_GETTID
 #include <sys/syscall.h>
 static inline int gettid() {
     return syscall(SYS_gettid);
 }
+#endif
 #elif HAVE_PTHREAD_H
 #define gettid  pthread_self
 #endif
